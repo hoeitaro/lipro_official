@@ -1,0 +1,182 @@
+<% const jsonData = require('../data.json') %>
+<!-- サイトバージョン -->
+<% const ver = "20251125_0" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- head -->
+    <%- include('../template/common/_head', {common: jsonData.common, current: jsonData.privacy}); %>
+    <!-- stractured-data -->
+    <!-- <%- include('../template/structured-data/_contact', {common: jsonData.common, current: jsonData.contact}); %> -->
+  </head>
+
+  <body>
+    <div class="l-contents">
+      <!-- header -->
+      <%- include('../template/common/_header', {path: "/", directory: "", common: jsonData.common}); %>
+      <main class="l-main" data-page-loaded>
+				<section class="p-contact c-lower-sec">
+					<div class="container c-lower-topContainer">
+						<hgroup class="p-contact__heading c-heading">
+							<h1 class="heading" data-animation="heading"><span>お問い合わせ</span><span class="visually-hidden">｜有限会社宝永企画｜WEB制作・採用に関するお問い合わせ</span></h1>
+							<p lang="en" data-animation="split-text">Contact</p>
+						</hgroup>
+
+						<div class="p-breadcrumbs">
+							<ul class="p-breadcrumbs__list">
+								<li class="p-breadcrumbs__item">
+									<a href="<%- jsonData.common.path %>">HOME</a>
+								</li>
+								<li class="p-breadcrumbs__item">お問い合わせ</li>
+							</ul>
+						</div>
+
+						<p class="u-text">下記フォーム内容をご記入後、確認画面へお進みください。</p>
+					</div>
+
+					<div class="c-lower-container container">
+						<div class="p-contact__inner inner">
+
+							<form action="https://ssgform.com/s/K58R6IWVNSmw" method="post" data-ssg-form>
+								<div style="display: none;"><input type="text" name="wana" /></div>
+
+								<div class="form-input">
+
+									<ul class="form-steps">
+										<li class="form-steps__item is-current"><span>入力画面</span></li>
+										<li class="form-steps__item">確認画面</li>
+										<li class="form-steps__item">完了画面</li>
+									</ul>
+									
+									<div class="p-contact__table c-lower-table">
+										<div class="c-lower-table__item" data-vertical="center">
+											<p class="c-lower-table__label"><label class="label" for="name">お名前</label><span class="required">必須</span></p>
+											<div class="c-lower-table__content" data-space="none">
+												<input class="input" id="name" name="お名前" required placeholder="お名前をご入力ください" autocomplete="name" data-field="name" />
+											</div>
+										</div>
+
+										<div class="c-lower-table__item" data-vertical="center">
+											<p class="c-lower-table__label"><label class="label" for="email">メールアドレス</label><span class="required">必須</span></p>
+											<div class="c-lower-table__content" data-space="none">
+												<input class="input" id="email" type="email" name="メールアドレス" required placeholder="メールアドレスをご入力ください" autocomplete="email" data-field="email">
+											</div>
+										</div>
+
+										<div class="c-lower-table__item" data-vertical="center">
+											<p class="c-lower-table__label"><label class="label" for="email_confirm">メールアドレス確認</label><span class="required">必須</span></p>
+											<div class="c-lower-table__content" data-space="none">
+												<input class="input" id="email_confirm" type="email" required placeholder="メールアドレスをご入力ください" autocomplete="email" data-field="email_confirm">
+											</div>
+										</div>
+
+										<div class="c-lower-table__item">
+											<p class="c-lower-table__label"><span class="label">件名</span><span class="required">必須</span></p>
+											<div class="c-lower-table__content">
+												<ul class="c-lower-table__radioList">
+													<li>
+														<label class="radio">
+															<input type="radio" name="件名" value="質問" data-field="subject">
+															質問
+														</label>
+													</li>
+													<li>
+														<label class="radio">
+															<input type="radio" name="件名" value="応募" data-field="subject">
+															応募
+														</label>
+													</li>
+													<li>
+														<label class="radio">
+															<input type="radio" name="件名" value="ご意見・ご感想" data-field="subject">
+															ご意見・ご感想
+														</label>
+													</li>
+													<li>
+														<label class="radio">
+															<input type="radio" name="件名" value="その他" data-field="subject">
+															その他
+														</label>
+													</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="c-lower-table__item">
+											<p class="c-lower-table__label"><label class="label" for="message">お問い合わせ内容</label><span class="required">必須</span></p>
+											<div class="c-lower-table__content" data-space="none">
+												<textarea class="textarea input" id="message" name="お問い合わせ内容" rows="5" required placeholder="お問い合わせ内容をご入力ください" data-field="message"></textarea>
+											</div>
+										</div>
+
+										<div class="c-lower-table__item" data-tableItem="single-column">
+											<button class="c-button" type="button" data-action="confirm"><span class="arrow c-arrow"></span>確認する</button>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="form-conf">
+									<ul class="form-steps">
+										<li class="form-steps__item">入力画面</li>
+										<li class="form-steps__item is-current"><span>確認画面</span></li>
+										<li class="form-steps__item">完了画面</li>
+									</ul>
+									
+									<div class="p-contact__table c-lower-table">
+										<div class="c-lower-table__item" data-vertical="center">
+											<p class="c-lower-table__label"><label class="label">お名前</label><span class="required">必須</span></p>
+											<div class="c-lower-table__content" data-space="none">
+												<p data-conf="name"></p>
+											</div>
+										</div>
+
+										<div class="c-lower-table__item" data-vertical="center">
+											<p class="c-lower-table__label"><label class="label">メールアドレス</label><span class="required">必須</span></p>
+											<div class="c-lower-table__content" data-space="none">
+												<p data-conf="email"></p>
+											</div>
+										</div>
+
+										<div class="c-lower-table__item">
+											<p class="c-lower-table__label"><span class="label">件名</span><span class="required">必須</span></p>
+											<div class="c-lower-table__content">
+												<p data-conf="subject"></p>
+											</div>
+										</div>
+
+										<div class="c-lower-table__item">
+											<p class="c-lower-table__label"><label class="label">お問い合わせ内容</label><span class="required">必須</span></p>
+											<div class="c-lower-table__content" data-space="none">
+												<p data-conf="message"></p>
+											</div>
+										</div>
+
+										<div class="c-lower-table__item" data-tableItem="single-column" data-conf>
+											<button class="c-button" type="submit" data-action="send"><span class="arrow c-arrow"></span>送信する</button>
+											<button class="c-back" type="button" data-action="back"><span class="arrow c-arrow"></span>修正する</button>
+										</div>
+
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</section>
+
+				<!-- bottom-link -->
+				<%- include('../template/common/_bottom-link', {path: "/"}); %>
+
+				<!-- circles -->
+				<%- include('../template/common/_circles', {path: "/", directory: ""}); %>
+
+      </main>
+      <!-- footer -->
+      <%- include('../template/common/_footer', {path: "/", directory: "", common: jsonData.common}); %>
+      <!-- drawer -->
+      <%- include('../template/common/_drawer', {path: "/"}); %>
+      <!-- svg -->
+      <%- include('../template/common/_svg'); %>
+    </div>
+  </body>
+</html>

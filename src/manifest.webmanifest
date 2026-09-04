@@ -1,0 +1,18 @@
+{
+  "name": "東京のホームページ制作会社・WEB制作会社｜宝永企画",
+  "short_name": "宝永企画",
+  "lang": "ja",
+  "description": "東京のホームページ制作会社・宝永企画。WEBサイト制作、システム開発、SEO対策やプロモーションまで一気通貫で対応。集客・売上につながるWeb制作をご提案します。",
+  "icons": [
+    {
+      "src": "https://www.hoei-kikaku.jp/assets/images/favicons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://www.hoei-kikaku.jp/assets/images/favicons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

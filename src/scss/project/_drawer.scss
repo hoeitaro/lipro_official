@@ -1,0 +1,119 @@
+@use "../global/mixin" as *;
+
+.p-drawer {
+  position: fixed;
+  padding: px-to-rem(10);
+  background-color: rgb(0 0 0 / 30%);
+  opacity: 0;
+  transition: var(--duration) var(--ease-out-base);
+  pointer-events: none;
+  inset: 0;
+
+  @include z-index("drawer");
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  // &.is-scrollLock {
+  //   overflow: auto;
+
+  //   scrollbar-gutter: stable;
+  // }
+
+  &__container {
+    display: grid;
+    height: 100%;
+    background-color: #fff;
+    background-image: url("../images/common/bg-logo.webp");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    border-radius: px-to-rem(10);
+    padding-block: var(--_header-block-size) px-to-rem(20);
+    padding-inline: px-to-rem(40) px-to-rem(20);
+  }
+
+  &__inner {
+    display: grid;
+    align-content: start;
+    overflow: hidden auto;
+    row-gap: px-to-rem(40);
+
+    :is(dt, a) {
+      margin-block: var(--half-leading);
+    }
+
+    > *:first-child {
+      margin-top: px-to-rem(30);
+    }
+
+    .arrow {
+      --_width: #{px-to-rem(19)};
+      --_bg-color: #fff;
+      --_arrow-width: #{px-to-rem(8)};
+      --_arrow-color: #000;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      column-gap: px-to-rem(10);
+      transition: color var(--duration) var(--ease-out-base);
+
+      @include hover {
+        color: #8fb82b;
+
+        .arrow {
+          --_arrow-color: var(--color-accent);
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    row-gap: px-to-rem(30);
+
+    li {
+      a {
+        font-size: px-to-rem(16);
+      }
+
+      .arrow {
+        --_bg-color: var(--gradient-primary);
+        --_arrow-color: #fff;
+      }
+    }
+  }
+
+  &__companyData {
+    padding-top: px-to-rem(30);
+    border-top: 1px solid #9f9f9f;
+  }
+
+  &__companyDataTitle {
+    display: flex;
+    align-items: end;
+    column-gap: px-to-rem(10);
+
+    .img {
+      width: px-to-rem(75);
+    }
+
+    span {
+      line-height: 1;
+    }
+  }
+
+  &__companyDataAddress {
+    margin-top: px-to-rem(15);
+    font-size: px-to-rem(10);
+  }
+
+  &__companyDataTel {
+    margin-top: px-to-rem(20);
+    font-size: px-to-rem(18);
+  }
+}

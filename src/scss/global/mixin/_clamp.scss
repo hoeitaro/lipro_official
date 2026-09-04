@@ -1,0 +1,20 @@
+@use "sass:math";
+
+// property: プロパティ名（例: margin-top）
+// minSize: 最小サイズ（例: 20px）
+// maxSize: 最大サイズ（例: 50px）
+// minWidth: 最小ブレークポイント（例: 768px）
+// maxWidth: 最大ブレークポイント（例: 1024px）
+@mixin clamp(
+  $property,
+  $minSize,
+  $maxSize,
+  $minWidth: 375px,
+  $maxWidth: 768px
+) {
+  // ビューポート幅によって変化する中間値を計算
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth)) * 100; // vw単位換算
+  $intercept: $minSize - ($slope * math.div($minWidth, 100)); // 768px時点での補正
+
+  #{$property}: clamp(#{$minSize}, #{$intercept} + #{$slope}vw, #{$maxSize});
+}

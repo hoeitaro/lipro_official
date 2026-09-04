@@ -1,0 +1,170 @@
+@use "../global/mixin/" as *;
+
+:root {
+  --layout-width-min: 375;
+  --layout-width-max: 980;
+  --base-font-size: 16;
+  --fluid-ratio-min: calc(1 / var(--layout-width-min) * 100dvi);
+  --fluid-ratio-max: calc(1 / var(--layout-width-max) * 100dvi);
+  --gutter: 20;
+  --rem: calc(1rem / var(--base-font-size));
+  --background-base: #fff;
+  --color-base: #222;
+  --color-accent: #36dd89;
+  --gradient-primary: linear-gradient(90deg in oklab, #000, #333);
+  --gradient-secondary: linear-gradient(90deg, #d5f3e1, #f0f0c5);
+  --gradient-circle1: linear-gradient(90deg, #d4ffe6, #fbfbbe);
+  --gradient-circle2: linear-gradient(90deg, #befbe8, #e0ffdb);
+  --gradient-circle3: linear-gradient(90deg, #e0ffdb, #befbe8);
+  --color-circle: #edfbcb;
+  --color-required: #ef4450;
+  --color-error: #ef4450;
+  --color-errorBg: #ffe3e5;
+  --color-input: #b9b9b9;
+  --color-placeholder: #b1b1b1;
+
+  // --color-invalid: #dc4646;
+  // --spacing-xs: 5px;
+  // --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  --spacing-2xl: 50px;
+
+  // --spacing-3xl: 100px;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+  --leading-small: 1.5;
+  --leading-normal: 2;
+  --half-leading: calc((1em - 1lh) / 2);
+  --rounded-circle: 50%;
+
+  @supports (height: 1cap) {
+    :lang(en) {
+      --half-leading: calc((1cap - 1lh) / 2);
+    }
+  }
+
+  // --spacing-xs-trim: calc(var(--spacing-xs) + var(--half-leading));
+  // --spacing-sm-trim: calc(var(--spacing-sm) + var(--half-leading));
+  --spacing-md-trim: calc(var(--spacing-md) + var(--half-leading));
+  --spacing-lg-trim: calc(var(--spacing-lg) + var(--half-leading));
+  --spacing-xl-trim: #{calc(var(--spacing-xl) + var(--half-leading))};
+  --spacing-2xl-trim: #{calc(var(--spacing-2xl) + var(--half-leading))};
+
+  // --spacing-3xl-trim: calc(var(--spacing-3xl) + var(--half-leading));
+  --font-family-base: "Noto Sans JP", sans-serif;
+  --font-family-en: "Saira Semi Condensed", sans-serif;
+  --font-family-sub:
+    "Helvetica Neue", arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+    "BIZ UDPGothic", meiryo, sans-serif;
+  --rounded-full: calc(infinity * 1px);
+  --ease-out-base: ease-out;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-short: 0.3s;
+  --duration: 0.5s;
+  --duration-long: 1s;
+  --scroll-margin: var(--_header-block-size);
+  --shadow-color: rgb(0 0 0 / 20%);
+  --shadow: 0 0 var(--shadow-size, 15px) var(--shadow-color);
+
+  @include clamp(--inner-radius, 20px, 30px);
+  @include clamp(--shadow-size, 15px, 30px);
+}
+
+:where(:root) {
+  color: var(--color-base);
+  font-weight: var(--font-regular);
+  font-size: 16px;
+  font-family: var(--font-family-base);
+  font-style: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  background-color: var(--background-base);
+  font-optical-sizing: auto;
+  text-size-adjust: 100%;
+
+  // scroll-padding-top: var(--scroll-padding);
+}
+
+body {
+  min-height: 100svh;
+  overflow: clip scroll;
+  font-weight: var(--font-medium);
+  font-size: px-to-rem(14);
+  line-height: var(--leading-normal);
+  font-feature-settings: "palt";
+
+  &.is-fixed {
+    overflow: hidden;
+  }
+
+  &:not(.first-access) {
+    --first-access: 0;
+  }
+
+  // @media (scripting: none) {
+  //   opacity: 1;
+  // }
+}
+
+:where(:any-link) {
+  color: unset;
+  text-decoration-line: none;
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0.25em;
+  background-color: unset;
+  text-decoration-skip-ink: auto;
+}
+
+// :where(:focus-visible) {
+//   outline: 2px solid var(--color-button-primary);
+//   outline-offset: -2px;
+// }
+
+:where(:focus-visible) {
+  outline: none;
+}
+
+:where(button, [type="button"], [type="reset"], [type="submit"]) {
+  touch-action: manipulation;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.container {
+  --spacing-gutter: calc(var(--gutter) * var(--fluid-ratio-min));
+
+  width: min(
+    100% - var(--spacing-gutter) * 2,
+    calc(1px * var(--layout-width-max))
+  );
+  margin-inline: auto;
+}
+
+.inner {
+  background-color: #efefef;
+  border-radius: var(--inner-radius);
+}
+
+[id],
+:focus {
+  scroll-margin-block-start: var(--scroll-margin);
+}
+
+.visually-hidden {
+  position: fixed !important;
+  margin: unset !important;
+  padding: unset !important;
+  border: none !important;
+  visibility: initial !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  inset: 0 !important;
+  inline-size: 4px !important;
+  block-size: 4px !important;
+  contain: strict !important;
+}

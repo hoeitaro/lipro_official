@@ -1,0 +1,24 @@
+{
+  "common": {
+    "path": "/",
+    "name": "リップロ",
+    "shortName": "リップロ",
+    "url": "https://www.lipro.tokyo/",
+    "ssgform": "https://ssgform.com/s/SXpdDkQPTfkg"
+  },
+  "top": {
+    "url": "https://www.lipro.tokyo/",
+    "title": "ホームページ制作会社・WEB制作会社・プロダクション｜リップロ",
+    "description": "リップロはWEBサイト制作、システム開発、SEO対策やプロモーション、プロダクションまで一気通貫で対応。集客・売上につながるWeb制作をご提案します。"
+  },
+  "privacy": {
+    "url": "https://www.lipro.tokyo/privacy/",
+    "title": "プライバシーポリシー｜リップロ",
+    "description": "リップロのプライバシーポリシーです。当社が取得する個人情報の取り扱い方針、利用目的、管理方法について定めています。"
+  },
+  "notFound": {
+    "url": "https://www.hoei-kikaku.jp/404.html",
+    "title": "404｜宝永企画",
+    "description": "404｜ご指定のページがみつかりませんでした。"
+  }
+}

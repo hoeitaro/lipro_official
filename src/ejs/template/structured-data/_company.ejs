@@ -1,0 +1,67 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "<%- common.url %>#organization",
+        "name": "<%- common.name %>",
+        "alternateName": "Hoei kikaku Co.,Ltd",
+        "url": "<%- common.url %>",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "<%- common.url %>assets/images/logo.svg"
+        },
+        "image": "<%- common.url %>assets/images/ogp.jpg",
+        "telephone": "<%- common.telephone %>",
+        "foundingDate": "<%- common.foundingDate %>",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressCountry": "JP",
+            "postalCode": "108-6028",
+            "addressRegion": "東京都",
+            "addressLocality": "港区",
+            "streetAddress": "港南2-15-1 品川インターシティA棟28F"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressCountry": "JP",
+            "postalCode": "150-0043",
+            "addressRegion": "東京都",
+            "addressLocality": "渋谷区",
+            "streetAddress": "道玄坂1-19-6 津田ソシアルビル2F"
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "<%- common.url %>company/#webpage",
+        "url": "<%- common.url %>company/",
+        "name": "会社概要｜有限会社宝永企画",
+        "inLanguage": "ja-JP",
+        "about": {
+          "@id": "<%- common.url %>#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "<%- common.url %>company/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "ホーム",
+            "item": "<%- common.url %>"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "会社概要",
+            "item": "<%- common.url %>company/"
+          }
+        ]
+      }
+    ]
+  }
+</script>

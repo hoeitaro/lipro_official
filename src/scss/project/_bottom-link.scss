@@ -1,0 +1,99 @@
+@use "../global/mixin/" as *;
+
+.p-bottom-link {
+  position: relative;
+
+  @include clamp(margin-top, 50px, 80px);
+
+  &__items {
+    display: grid;
+    background-image: var(
+      --background-url,
+      url("../../assets/images/common/bottom-link.webp")
+    );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include clamp-negative(gap, 30px, 20px);
+    @include clamp(padding-block, 30px, 50px);
+    @include clamp(padding-inline, 12.5px, 100px);
+    @include clamp(border-radius, 20px, 30px);
+
+    @include mq(md) {
+      --background-url: url("../../assets/images/common/bottom-link--pc.webp");
+    }
+
+    @include mq(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.p-bottom-link-item {
+  position: relative;
+  display: grid;
+  align-content: center;
+  background-color: #fff;
+  row-gap: px-to-rem(15);
+
+  @include clamp(height, 150px, 200px);
+  @include clamp(padding-inline, 33px, 60px);
+  @include clamp(border-radius, 10px, 20px);
+
+  &::before {
+    position: absolute;
+    background-color: var(--color-accent);
+    border-radius: 0 px-to-rem(5) px-to-rem(5) 0;
+    inset-block: 0;
+    margin-block: auto;
+    content: "";
+
+    @include clamp(width, 7px, 10px);
+    @include clamp(height, 115px, 140px);
+  }
+
+  > * {
+    margin-block: var(--half-leading);
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    column-gap: px-to-rem(10);
+
+    a {
+      color: var(--_color, #89a641);
+      font-weight: var(--font-bold);
+      font-size: px-to-rem(30);
+      transition: color var(--duration) var(--ease-out-base);
+    }
+
+    .arrow {
+      --_width: #{px-to-rem(23)};
+      --_bg-color: var(--gradient-primary);
+      --_arrow-width: #{px-to-rem(13)};
+      --_arrow-color: #fff;
+
+      transition: --_arrow-color var(--duration) var(--ease-out-base);
+    }
+  }
+
+  &__text {
+    height: calc(2em * 1.5);
+    font-size: px-to-rem(14);
+    line-height: var(--leading-small);
+  }
+
+  @include hover {
+    cursor: pointer;
+
+    .p-bottom-link-item__heading a {
+      --_color: var(--color-accent);
+    }
+
+    .arrow {
+      --_arrow-color: var(--color-accent);
+    }
+  }
+}

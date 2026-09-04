@@ -1,0 +1,74 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "<%- common.url %>#organization",
+        "name": "<%- common.name %>",
+        "alternateName": "<%- common.shortName %>",
+        "url": "<%- common.url %>",
+        "logo": "<%- common.url %>assets/images/logo.svg",
+        "image": "<%- common.url %>assets/images/ogp.jpg",
+        "description": "<%- common.description %>",
+        "telephone": "<%- common.telephone %>",
+        "email": "<%- common.email %>",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "港南2-15-1 品川インターシティA棟28F",
+            "addressLocality": "港区",
+            "addressRegion": "東京都",
+            "postalCode": "108-6028",
+            "addressCountry": "JP"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "道玄坂1-19-6 津田ソシアルビル2F",
+            "addressLocality": "渋谷区",
+            "addressRegion": "東京都",
+            "postalCode": "150-0043",
+            "addressCountry": "JP"
+          }
+        ],
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "<%- common.url %>#website",
+        "url": "<%- common.url %>",
+        "name": "宝永企画｜東京のホームページ制作会社・WEB制作会社",
+        "publisher": {
+          "@id": "<%- common.url %>#organization"
+        },
+        "inLanguage": "ja-JP"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "<%- common.url %>#webpage",
+        "url": "<%- common.url %>",
+        "name": "東京のホームページ制作会社・WEB制作会社 宝永企画",
+        "description": "東京を拠点にWEBサイト制作、システム開発、プロモーションを行うホームページ制作会社です。立ち上げから集客までトータルサポート。",
+        "inLanguage": "ja-JP",
+        "isPartOf": {
+          "@id": "<%- common.url %>#website"
+        },
+        "about": {
+          "@id": "<%- common.url %>#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "<%- common.url %>#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "トップページ",
+            "item": "<%- common.url %>"
+          }
+        ]
+      }
+    ]
+  }
+</script>

@@ -1,0 +1,61 @@
+@use "../global/mixin/" as *;
+
+.c-button {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: min(100%, var(--_maxWidth));
+  color: var(--_color, #fff);
+  font-weight: var(--font-bold);
+  background: var(--gradient-primary);
+  transition: color var(--duration) var(--ease-out-base);
+  margin-inline: auto;
+
+  @include clamp(--_maxWidth, 280px, 380px);
+  @include clamp(height, 60px, 80px);
+  @include clamp(padding-inline, 30px, 40px);
+  @include clamp(border-radius, 15px, 20px);
+  @include clamp(font-size, 20px, 28px);
+
+  .arrow {
+    --_width: #{px-to-rem(23)};
+    --_bg-color: #fff;
+    --_arrow-width: #{px-to-rem(13)};
+    --_arrow-color: #000;
+  }
+
+  &::after {
+    content: "";
+  }
+
+  @include hover {
+    --_color: var(--color-accent);
+
+    .arrow {
+      --_bg-color: var(--color-accent);
+    }
+  }
+
+  // background-color: color-mix(in srgb, var(--_bg1-color) var(--_opacity, 100%), transparent);
+  // transition: background-color 0.5s ease-out;
+
+  // @include hover {
+  //   --_opacity: 60%;
+  // }
+}
+
+.c-back {
+  display: flex;
+  align-items: center;
+  font-weight: var(--font-medium);
+  font-size: px-to-rem(16);
+  column-gap: px-to-rem(10);
+  margin-inline: auto;
+
+  .arrow {
+    --_width: #{px-to-rem(23)};
+    --_bg-color: var(--gradient-primary);
+    --_arrow-width: #{px-to-rem(13)};
+    --_arrow-color: #fff;
+  }
+}

@@ -1,0 +1,112 @@
+@use "../global/mixin/" as *;
+
+[data-circle="1"] {
+  --_circle-position-top: -18%;
+  --_circle-color: var(--gradient-circle1);
+
+  @include clamp-negative(--_circle-position-left, -44px, -80px, 769px, 1024px);
+  @include clamp-negative(--_circle-position-top, -100px, -80px, 769px, 1024px);
+  @include clamp(width, 290px, 580px, 769px, 1024px);
+}
+
+[data-circle="2"] {
+  --_circle-position-top: calc(px-to-rem(13) * -1);
+  --_circle-position-left: 55.2%;
+  --_circle-color: #fbf2cb;
+
+  @include clamp(--_circle-position-top, 64px, 138px);
+  @include clamp(width, 34px, 68px);
+}
+
+[data-circle="3"] {
+  --_circle-position-left: 1.7%;
+  --_circle-color: #d8fce0;
+
+  @include clamp(--_circle-position-top, 268px, 582px, 769px, 1024px);
+  @include clamp(width, 54px, 108px);
+
+  @include mq(lg) {
+    --_circle-position-left: 0.5%;
+  }
+}
+
+[data-circle="4"] {
+  --_circle-position-left: 72.8%;
+  --_circle-color: var(--gradient-circle1);
+
+  @include clamp(--_circle-position-top, 485px, 650px);
+  @include clamp(width, 160px, 400px);
+
+  @include mq(lg) {
+    --_circle-position-left: 82%;
+  }
+
+  &[data-lower] {
+    @include clamp(--_circle-position-top, 125px, 174px);
+  }
+}
+
+[data-circle="5"] {
+  --_circle-position-left: -13%;
+  --_z-index: -2;
+  --_circle-color: #fffae5;
+
+  @include clamp(--_circle-position-top, 675px, 815px);
+  @include clamp(width, 327px, 481px);
+}
+
+[data-circle="6"] {
+  --_circle-position-left: 82%;
+  --_circle-color: var(--gradient-circle3);
+  --_circle-position-top: unset;
+
+  bottom: -8%;
+  width: 310px;
+}
+
+[data-circle="7"] {
+  --_circle-position-top: -13%;
+  --_circle-position-left: -10%;
+  --_circle-color: #dbfcdf;
+
+  @include clamp(width, 205px, 410px);
+}
+
+[data-circle="8"] {
+  --_circle-position-top: 175px;
+  --_circle-position-left: 47%;
+  --_circle-color: var(--gradient-circle1);
+
+  @include clamp(width, 275px, 550px);
+
+  @include mq(lg) {
+    --_circle-position-top: -5.9%;
+    --_circle-position-left: 64.8%;
+  }
+}
+
+[data-circle="9"] {
+  --_circle-position-top: unset;
+  --_circle-position-left: -13.3%;
+  --_circle-color: #fffae5;
+
+  bottom: -10%;
+
+  @include clamp(width, 300px, 600px);
+}
+
+.bg-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  aspect-ratio: 354/317;
+
+  @include clamp(width, 175px, 354px, 769px, 1024px);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

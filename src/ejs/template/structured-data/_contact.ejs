@@ -1,0 +1,42 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "<%- common.url %>contact/#webpage",
+        "url": "<%- common.url %>contact/",
+        "name": "お問い合わせ｜有限会社宝永企画",
+        "description": "有限会社宝永企画へのお問い合わせページです。WEB制作、採用に関するご相談・ご質問はこちらからお問い合わせください。",
+        "inLanguage": "ja-JP",
+        "isPartOf": {
+          "@id": "<%- common.url %>#website"
+        },
+        "about": {
+          "@id": "<%- common.url %>#organization"
+        },
+        "breadcrumb": {
+          "@id": "<%- common.url %>contact/#breadcrumb"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "<%- common.url %>contact/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "ホーム",
+            "item": "<%- common.url %>"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "お問い合わせ",
+            "item": "<%- common.url %>contact/"
+          }
+        ]
+      }
+    ]
+  }
+</script>

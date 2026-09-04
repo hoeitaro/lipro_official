@@ -1,0 +1,38 @@
+<header class="l-header js-header" data-scroll-toggle>
+  <div class="l-header__container container">
+    
+		<% if(directory === "index") { %>
+			<h1 class="l-header__logo">
+				<a href="#top">
+					<svg class="img c-logo"><use xlink:href="#logo"></use></svg>
+					<span class="visually-hidden">LIPRO リップロ</span>
+				</a>
+			</h1>
+		<% } else { %>
+			<p class="l-header__logo">
+				<a href="<%- path %>">
+					<svg class="img c-logo"><use xlink:href="#logo"></use></svg>
+					<span class="visually-hidden">LIPRO リップロ</span>
+				</a>
+			</p>
+		<% } %>
+    
+    <nav class="l-header-nav">
+      <ul class="l-header-nav__list">
+        <li class="l-header-nav__item">
+          <a href="/#service"><span class="arrow c-arrow"></span>事業内容</a>
+        </li>
+        <li class="l-header-nav__item">
+          <a href="/#company"><span class="arrow c-arrow"></span>会社概要</a>
+        </li>
+        <li class="l-header-nav__item --application">
+          <a href="/#contact"><span class="arrow c-arrow"></span>お問い合わせ</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="l-header__menu js-menu" id="menu" type="button" name="menu">
+      <span class="bar"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+  </div>
+</header>

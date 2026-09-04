@@ -1,0 +1,78 @@
+<% const jsonData = require('../data.json') %>
+<!-- サイトバージョン -->
+<% const ver = "20251125_0" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- head -->
+    <%- include('../template/common/_head', {common: jsonData.common, current: jsonData.privacy}); %>
+    <!-- stractured-data -->
+    <!-- <%- include('../template/structured-data/_top', {common: jsonData.common, current: jsonData.contact, shops:
+    jsonData.shops}); %> -->
+  </head>
+
+  <body>
+    <div class="l-contents">
+      <!-- header -->
+      <%- include('../template/common/_header', {path: "/", directory: "", common: jsonData.common}); %>
+      <main class="l-main" data-page-loaded>
+				<section class="p-contact c-lower-sec">
+					<div class="container c-lower-topContainer">
+						<hgroup class="p-contact__heading c-heading">
+							<h1 class="heading" data-animation="heading"><span>お問い合わせ</span></h1>
+							<p lang="en" data-animation="split-text">Contact</p>
+						</hgroup>
+
+						<div class="p-breadcrumbs">
+							<ul class="p-breadcrumbs__list">
+								<li class="p-breadcrumbs__item">
+									<a href="<%- jsonData.common.path %>">HOME</a>
+								</li>
+								<li class="p-breadcrumbs__item">お問い合わせ</li>
+							</ul>
+						</div>
+
+						<p class="u-text">下記フォーム内容をご記入後、確認画面へお進みください。</p>
+					</div>
+
+					<div class="c-lower-container container">
+						<div class="p-contact__inner inner">
+
+							<ul class="form-steps">
+								<li class="form-steps__item">入力画面</li>
+								<li class="form-steps__item">確認画面</li>
+								<li class="form-steps__item is-current"><span>完了画面</span></li>
+							</ul>
+
+							<div class="p-contact__table c-lower-table">
+								<div class="form-thunks">
+									<p class="form-thunks__heading">送信が完了しました。</p>
+
+									<div class="form-thunks__text">
+										<p>この度は、弊社ホームページをご利用頂きまして、誠にありがとうございます。</p>
+										<p>お問い合わせの内容を確認後、担当者より改めてご連絡致します。</p>
+									</div>
+
+									<a class="form-thunks__button c-button" href="<%- jsonData.common.path %>"><span class="arrow c-arrow"></span>トップページへ</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- bottom-link -->
+				<%- include('../template/common/_bottom-link', {path: "/"}); %>
+
+				<!-- circles -->
+				<%- include('../template/common/_circles', {path: "/",directory: ""}); %>
+
+      </main>
+      <!-- footer -->
+      <%- include('../template/common/_footer', {path: "/", directory: "", common: jsonData.common}); %>
+      <!-- drawer -->
+      <%- include('../template/common/_drawer', {path: "/"}); %>
+      <!-- svg -->
+      <%- include('../template/common/_svg'); %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<% const jsonData = require('./data.json') %>
+<!-- サイトバージョン -->
+<% const ver = "20251125_0" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- head -->
+    <%- include('./template/common/_head_other', {common: jsonData.common, current: jsonData.notFound}); %>
+  </head>
+
+  <body>
+    <div class="l-contents">
+      <!-- header -->
+      <%- include('./template/common/_header', {path: "/", directory: "", common: jsonData.common}); %>
+      <main class="l-main">
+        <div style="display: grid; place-content: center; height: 100%; padding-block: 100px; color: #222">
+          <p class="u-text-center" style="font-size: 20px; font-weight: 700">
+            404 not found<br />ご指定のページが見つかりません。
+          </p>
+          <div style="margin-top: 50px; text-align: center">
+            <a
+              style="padding: 10px 30px; border: 1px solid #222; font-size: 16px"
+              href="<%- jsonData.common.url %>"
+              >トップページへ戻る</a
+            >
+          </div>
+        </div>
+
+      </main>
+
+      <!-- footer -->
+      <%- include('./template/common/_footer', {path: "/", directory: "", common: jsonData.common}); %>
+
+      <!-- drawer -->
+      <%- include('./template/common/_drawer', {path: "/"}); %>
+
+      <!-- svg -->
+      <%- include('./template/common/_svg'); %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+@use "../global/mixin/" as *;
+
+.required {
+  color: var(--color-required);
+  font-weight: var(--font-bold);
+  font-size: px-to-rem(14);
+}
+
+.input {
+  width: 100%;
+  font-size: px-to-rem(16);
+  background-color: #fff;
+  border: 1px solid var(--color-input);
+  border-radius: px-to-rem(10);
+  padding-block: px-to-rem(8);
+  padding-inline: px-to-rem(20);
+
+  &::placeholder {
+    color: var(--color-placeholder);
+  }
+
+  &.is-error {
+    background-color: var(--color-errorBg);
+    border: 2px solid var(--color-error);
+  }
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  font-size: px-to-rem(16);
+  column-gap: px-to-rem(10);
+  cursor: pointer;
+
+  :has(input:checked)::before {
+    content: "";
+  }
+
+  input {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid var(--color-input);
+    border-radius: var(--rounded-full);
+
+    &.is-error {
+      background-color: var(--color-errorBg);
+      border-color: var(--color-error);
+    }
+
+    /* stylelint-disable */
+    &::before {
+      position: absolute;
+      display: block;
+      width: 12px;
+      margin: auto;
+      background-color: var(--color-accent);
+      border-radius: var(--rounded-full);
+      opacity: 0;
+      transition: opacity var(--duration) var(--ease-out-base);
+      inset: 0;
+      aspect-ratio: 1;
+      content: "";
+    }
+
+    &:checked::before {
+      opacity: 1;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  font-size: px-to-rem(16);
+  column-gap: px-to-rem(10);
+  cursor: pointer;
+
+  :has(input:checked)::before {
+    content: "";
+  }
+
+  input {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid var(--color-input);
+    border-radius: 3px;
+
+    &.is-error {
+      background-color: var(--color-errorBg);
+      border-color: var(--color-error);
+    }
+
+    /* stylelint-disable */
+    &::before {
+      position: absolute;
+      z-index: 1;
+      display: block;
+      width: 15px;
+      margin: auto;
+      background-color: #fff;
+      opacity: 0;
+      transition: opacity var(--duration) var(--ease-out-base);
+      inset: 0;
+      aspect-ratio: 1;
+      mask-image: url("../images/common/check.svg");
+      mask-position: center;
+      mask-repeat: no-repeat;
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      display: block;
+      background-color: #8fb82b;
+      opacity: 0;
+      transition: opacity var(--duration) var(--ease-out-base);
+      inset: 0;
+      content: "";
+    }
+
+    &:checked::before,
+    &:checked::after {
+      opacity: 1;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.c-error {
+  color: var(--color-error);
+  font-weight: var(--font-bold);
+}
+
+.form-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include clamp(column-gap, 5px, 10px);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    color: var(--_color, #777);
+    font-weight: var(--font-bold);
+
+    @include clamp(column-gap, 5px, 10px);
+    @include clamp(font-size, 16px, 20px);
+
+    &.is-current {
+      --_color: #333;
+
+      span {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          top: calc(100% + 10px);
+          width: px-to-rem(40);
+          background-color: #8fb82b;
+          border-radius: var(--rounded-full);
+          inset-inline: 0;
+          margin-inline: auto;
+          content: "";
+
+          @include clamp(height, 7.5px, 11px);
+        }
+      }
+    }
+
+    &:not(:first-child)::before {
+      height: px-to-rem(4);
+      background-color: #c1db81;
+      content: "";
+
+      @include clamp(width, 21px, 42px);
+    }
+  }
+}
+
+.form-thunks {
+  padding-inline: px-to-rem(10);
+  text-align: center;
+
+  @include clamp(padding-block, 15px, 40px);
+
+  &__heading {
+    font-weight: var(--font-bold);
+
+    @include clamp(font-size, 18px, 28px);
+  }
+
+  &__text {
+    @include clamp(margin-top, 40px, 80px);
+  }
+
+  &__button {
+    @include clamp(margin-top, 40px, 80px);
+  }
+}

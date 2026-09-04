@@ -1,0 +1,11 @@
+@mixin z-index($target) {
+  @if $target == "header" {
+    z-index: 30;
+  } @else if $target == "pageTop" {
+    z-index: 10;
+  } @else if $target == "drawer" {
+    z-index: 20;
+  } @else if $target == "loader" {
+    z-index: 40;
+  }
+}

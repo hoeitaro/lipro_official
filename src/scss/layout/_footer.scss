@@ -1,0 +1,233 @@
+@use "../global/mixin/" as *;
+
+.l-footer {
+  --layout-width-max: 980;
+
+  position: relative;
+  background-color: #414141;
+
+  @include clamp(margin-top, 30px, 40px);
+
+  &__container {
+    position: relative;
+    display: grid;
+    color: #fff;
+    margin-block: px-to-rem(50);
+
+    @include mq-down(md) {
+      row-gap: px-to-rem(40);
+    }
+
+    @include mq(md) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: px-to-rem(80);
+
+      &::before {
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: #9f9f9f;
+        inset-inline: 0;
+        margin-inline: auto;
+        content: "";
+      }
+    }
+  }
+
+  &__copyright {
+    background-color: #000;
+    padding-block: px-to-rem(16);
+
+    &Container {
+      --_gap: #{px-to-rem(20)};
+
+      display: flex;
+      flex-direction: var(--_flex-direction, column);
+      gap: var(--_gap);
+      align-items: center;
+
+      @include mq(md) {
+        --_flex-direction: row;
+        --_gap: #{px-to-rem(58)};
+      }
+    }
+
+    a {
+      color: #fff;
+      font-weight: var(--font-medium);
+
+      @include mq(md) {
+        order: 2;
+      }
+    }
+
+    small {
+      display: block;
+      color: #fff;
+      font-weight: var(--font-medium);
+
+      @include clamp(font-size, 12px, 14px);
+
+      @include mq(md) {
+        order: 1;
+      }
+    }
+  }
+}
+
+.l-footer-companyData {
+  display: grid;
+
+  // row-gap: px-to-rem(20);
+
+  // *:not(.img) {
+  //   margin-block: var(--half-leading);
+  // }
+
+  &
+    :is(
+      .l-footer-companyData__title,
+      .l-footer-companyData__name,
+      .l-footer-companyData__tel
+    ) {
+    font-weight: var(--font-medium);
+  }
+
+  &__title {
+    display: flex;
+    align-items: end;
+    column-gap: 10px;
+    margin-block: var(--half-leading);
+
+    @include clamp(font-size, 14px, 16px);
+
+    .img {
+      width: 75px;
+      fill: #fff;
+    }
+
+    span {
+      line-height: 1;
+    }
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+    @include clamp(column-gap, 20px, 30px);
+    @include clamp(margin-top, 16px, 22px);
+    @include clamp(font-size, 16px, 24px);
+
+    .img {
+      aspect-ratio: 4/1;
+      fill: #fff;
+
+      @include clamp(width, 131px, 165px);
+    }
+  }
+
+  &__address {
+    margin-block: var(--spacing-lg-trim) var(--half-leading);
+
+    @include clamp(font-size, 10px, 12px);
+
+    dt {
+      font-weight: 400;
+    }
+  }
+
+  &__tel {
+    margin-block: var(--spacing-lg-trim) var(--half-leading);
+
+    @include clamp(font-size, 18px, 20px);
+  }
+
+  &__about {
+    margin-block: var(--spacing-xl-trim) var(--half-leading);
+
+    @include clamp(font-size, 12px, 14px);
+  }
+}
+
+.l-footer-link {
+  display: grid;
+  row-gap: px-to-rem(40);
+  color: #fff;
+
+  @include mq-down(sm) {
+    padding-top: px-to-rem(60);
+    border-top: 1px solid #9f9f9f;
+  }
+
+  & :is(dt, a) {
+    margin-block: var(--half-leading);
+    font-weight: var(--font-medium);
+  }
+
+  & :is(dt, & > a) {
+    @include clamp-negative(font-size, 18px, 16px);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    column-gap: px-to-rem(10);
+    transition: color var(--duration) var(--ease-out-base);
+
+    @include hover {
+      color: #8fb82b;
+
+      .arrow {
+        --_arrow-color: #c1db81;
+      }
+    }
+  }
+
+  .arrow {
+    --_width: #{px-to-rem(20)};
+    --_bg-color: var(--gradient-primary);
+    --_arrow-width: #{px-to-rem(12)};
+    --_arrow-color: #fff;
+  }
+}
+
+.l-footer-pageTop {
+  position: fixed;
+  bottom: px-to-rem(60);
+  display: grid;
+  background: var(--gradient-primary);
+  border-radius: var(--rounded-full);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  place-content: center;
+  aspect-ratio: 1;
+  translate: 0 px-to-rem(30);
+
+  --_transition:
+    translate var(--duration-long) var(--ease-out-base),
+    opacity var(--duration-long) var(--ease-out-base);
+
+  @include z-index("pageTop");
+  @include clamp(right, 20px, 50px);
+
+  &.is-scrolled {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  --_width: #{px-to-rem(50)};
+  --_bg-color: var(--gradient-primary);
+  --_arrow-width: #{px-to-rem(25)};
+  --_arrow-color: var(--color-accent);
+
+  @include mq(md) {
+    -_width: #{px-to-rem(60)};
+  }
+
+  &::before {
+    rotate: -90deg;
+  }
+}

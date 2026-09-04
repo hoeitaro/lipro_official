@@ -1,0 +1,15 @@
+@use "../global/mixin/" as *;
+
+.p-recruit {
+  &__inner {
+    margin-top: px-to-rem(50);
+
+    @include clamp(padding-top, 25px, 40px);
+    @include clamp(padding-bottom, 30px, 60px);
+    @include clamp(padding-inline, 13px, 130px);
+  }
+
+  &__table {
+    @include clamp(margin-top, 35px, 60px);
+  }
+}

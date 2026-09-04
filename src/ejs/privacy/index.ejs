@@ -1,0 +1,151 @@
+<% const jsonData = require('../data.json') %>
+<!-- サイトバージョン -->
+<% const ver = "20251125_0" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- head -->
+    <%- include('../template/common/_head', {common: jsonData.common, current: jsonData.privacy}); %>
+    <!-- stractured-data -->
+    <!-- <%- include('../template/structured-data/_privacy', {common: jsonData.common, current: jsonData.privacy}); %> -->
+  </head>
+
+  <body>
+    <div class="l-contents">
+      <!-- header -->
+      <%- include('../template/common/_header', {path: "/", directory: "", common: jsonData.common}); %>
+      <main class="l-main" data-page-loaded>
+				<section class="p-privacy c-lower-sec">
+					<div class="container c-lower-topContainer">
+						<hgroup class="p-privacy__heading c-heading">
+							<h1 class="heading" data-animation="heading"><span>プライバシーポリシー</span><span class="visually-hidden">｜リップロ｜個人情報保護方針</span></h1>
+							<p lang="en" data-animation="split-text">Privacy policy</p>
+						</hgroup>
+
+						<div class="p-breadcrumbs">
+							<ul class="p-breadcrumbs__list">
+								<li class="p-breadcrumbs__item">
+									<a href="<%- jsonData.common.path %>">HOME</a>
+								</li>
+								<li class="p-breadcrumbs__item">プライバシーポリシー</li>
+							</ul>
+						</div>
+
+						<p class="u-text">LIPRO-リップロ-（以下、「当社」）は、個人情報及び特定個人情報の取扱いに関して以下のプライバシーポリシーを策定し、これを遵守するとともに、お客様の個人情報等をはじめとする全ての個人情報等を適正に扱ってまいります。</p>
+					</div>
+
+					<div class="p-privacy__container container">
+						<div class="c-lower-table">
+							<div class="c-lower-table__item" data-column="true">
+								<p class="c-lower-table__label"><span class="label">01. 個人情報の定義</span></p>
+								<div class="c-lower-table__content">
+									<p>「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報及び容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。</p>
+								</div>
+							</div>
+
+							<div class="c-lower-table__item" data-column="true">
+								<p class="c-lower-table__label"><span class="label">02. 個人情報保護方針</span></p>
+								<div class="c-lower-table__content">
+									<p>当社は、以下の通り個人情報保護方針を定め、個人情報保護の重要性を認識し、個人情報保護の取り組みを徹底いたします。</p>
+								</div>
+							</div>
+
+							<div class="c-lower-table__item" data-column="true">
+								<p class="c-lower-table__label"><span class="label">03. 個人情報の利用について</span></p>
+								<div class="c-lower-table__content">
+									<p>当社は、個人情報の取得にあたり、利用目的を予め明示した上で、Web画面や申請書の書面などの方法により、適正かつ公平な手段によって取得いたします。</p>
+									<p>本サイトにおいて、当社がお客様から取得する個人情報は以下のとおりです。</p>
+									<ul>
+										<li>・氏名</li>
+										<li>・会社名（所属先）</li>
+										<li>・メールアドレス</li>
+										<li>・電話番号</li>
+										<li>・希望する連絡方法</li>
+										<li>・お問い合わせ・ご相談内容</li>
+										<li>・モデルのご応募に関する内容</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="c-lower-table__item" data-column="true">
+								<p class="c-lower-table__label"><span class="label">04. 個人情報の利用目的</span></p>
+								<div class="c-lower-table__content">
+									<p>当社は、以下の目的において、個人情報を取得し利用します。</p>
+									<ul>
+										<li>・当社からのご連絡や業務案内</li>
+										<li>・当社の業務に関する契約の締結および履行</li>
+										<li>・お問い合わせ・ご相談内容に対する回答</li>
+										<li>・当社サービスの提供</li>
+										<li>・本サイトの運営・保守・管理</li>
+										<li>・上記の利用目的に付随する目的</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="c-lower-table__item" data-column="true">
+								<p class="c-lower-table__label"><span class="label">05.個人情報の第三者への開示・提供</span></p>
+								<div class="c-lower-table__content">
+									<p>1.<br>当社は、取得させていただいた個人情報は、ご本人の事前の同意なく第三者に対して開示することはありません。ただし、次の場合には、ご本人の事前の同意なく、取得した個人情報を開示できるものとします。</p>
+									<ul>
+										<li>・法令に基づき開示を求められた場合</li>
+										<li>・当社、ご本人またはその他の第三者の権利、利益、名誉、信用等を保護するために必要であると当社が判断した場合</li>
+										<li>・ご本人が自分の個人情報の開示を事前に承諾した場合</li>
+									</ul>
+									<p>2.<br>前項の定めにかかわらず、当社が利用目的達成のために必要な範囲内において個人情報の取り扱いの全部または一部を委託する場合、当該情報の提供先は第三者に該当しないものとします。</p>
+								</div>
+							</div>
+
+							<div class="c-lower-table__item" data-column="true">
+								<p class="c-lower-table__label"><span class="label">06. 個人情報の安全管理</span></p>
+								<div class="c-lower-table__content">
+									<p>当社は、取り扱う個人情報への不正なアクセス、個人情報の漏えい、滅失又はき損等のリスクに対し、必要かつ適切な安全管理措置を講じます。</p>
+								</div>
+							</div>
+
+							<div class="c-lower-table__item" data-column="true">
+								<p class="c-lower-table__label"><span class="label">07. 個人情報の利用・提供の拒否に関するお問い合わせ</span></p>
+								<div class="c-lower-table__content">
+									<p>当社にご提供いただいた個人情報について、利用を望まない場合や利用目的内での第三者への提供を望まない場合は、当社までお問い合わせください。</p>
+								</div>
+							</div>
+
+							<div class="c-lower-table__item" data-column="true">
+								<p class="c-lower-table__label"><span class="label">08. 個人情報の開示等の手続き</span></p>
+								<div class="c-lower-table__content">
+									<p>当社は、ご本人より、当該本人の個人情報について、利用目的の通知、開示、内容の訂正・追加・削除、利用の停止・消去、及び第三者提供の停止のお申し出があった場合には、ご本人確認の上、合理的な範囲で遅滞なく対応いたします。</p>
+								</div>
+							</div>
+
+							<div class="c-lower-table__item" data-column="true">
+								<p class="c-lower-table__label"><span class="label">09. 法令、規範の遵守とプライバシーポリシーの変更</span></p>
+								<div class="c-lower-table__content">
+									<p>当社は、個人情報に関して適用される日本の法令およびその他の規範を遵守するとともに、本ポリシーの内容を随時見直し、継続的な改善に努めます。
+</p>
+								</div>
+							</div>
+
+							<div class="c-lower-table__item" data-column="true">
+								<p class="c-lower-table__label"><span class="label">10. 個人情報に関する苦情及び相談の連絡先</span></p>
+								<div class="c-lower-table__content">
+									<div>
+										<p>お問い合わせ窓口<br>会社名：合同会社リップロ<br>所在地：〒108-6028 神奈川県横浜市中区尾上町6丁目87-1<br>電話番号：03-6416-3364</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- circles -->
+				<%- include('../template/common/_circles', {path: "/",directory: ""}); %>
+
+      </main>
+      <!-- footer -->
+      <%- include('../template/common/_footer', {path: "/", directory: "", common: jsonData.common}); %>
+      <!-- drawer -->
+      <%- include('../template/common/_drawer', {path: "/"}); %>
+      <!-- svg -->
+      <%- include('../template/common/_svg'); %>
+    </div>
+  </body>
+</html>

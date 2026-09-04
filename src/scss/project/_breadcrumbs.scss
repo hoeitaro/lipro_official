@@ -1,0 +1,29 @@
+@use "../global/mixin/" as *;
+
+.p-breadcrumbs {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: px-to-rem(10);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    color: #777;
+    font-size: px-to-rem(10);
+    column-gap: px-to-rem(10);
+    margin-block: var(--half-leading);
+
+    &:nth-of-type(n + 2)::before {
+      width: 5px;
+      height: 1px;
+      background-color: #777;
+      content: "";
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+}

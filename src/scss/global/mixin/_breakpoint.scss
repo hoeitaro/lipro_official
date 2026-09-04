@@ -1,0 +1,55 @@
+// @mixin mq($breakpoint: md) {
+//   @if $breakpoint == md {
+//     @media screen and (min-width: 768px) {
+//       @content;
+//     }
+//   } @else if $breakpoint == lg {
+//     @media screen and (min-width: 992px) {
+//       @content;
+//     }
+//   } @else if $breakpoint == sm {
+//     @media screen and (max-width: 768px) {
+//       @content;
+//     }
+// 	}
+// }
+
+@use "sass:map";
+
+$breakpoints: (
+  // 'sm': 'screen and (min-width: 576px)',
+  // 'md': 'screen and (min-width: 768px)',
+  // 'lg': 'screen and (min-width: 992px)',
+  // 'xl': 'screen and (min-width: 1200px)',
+  // 'sm': 'screen and (min-width: 576px)',
+  "sm": "screen and (max-width: 767px)",
+  "md": "screen and (min-width: 768px)",
+  "lg": "screen and (min-width: 1024px)"
+) !default;
+$_breakpoints-up: (
+  "md": "screen and (min-width: 768px)",
+  "lg": "screen and (min-width: 1024px)",
+) !default;
+$_breakpoints-down: (
+  "xs": "screen and (max-width: 374px)",
+  "sm": "screen and (max-width: 767px)",
+  "md": "screen and (max-width: 1023px)",
+) !default;
+
+@mixin mq($breakpoint) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-up($breakpoint) {
+  @media #{map.get($_breakpoints-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-down($breakpoint) {
+  @media #{map.get($_breakpoints-down, $breakpoint)} {
+    @content;
+  }
+}

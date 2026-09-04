@@ -1,0 +1,24 @@
+@use "../global/mixin/" as *;
+
+.c-arrow {
+  display: grid;
+  width: var(--_width);
+  background: var(--_bg-color);
+  border-radius: var(--rounded-full);
+  transition: var(
+    --_transition,
+    background var(--duration) var(--ease-out-base)
+  );
+  place-content: center;
+  aspect-ratio: 1;
+
+  &::before {
+    width: var(--_arrow-width);
+    background-color: var(--_arrow-color);
+    transition: background-color var(--duration) var(--ease-out-base);
+    aspect-ratio: 828.4/512;
+    mask-image: url("../images/common/arrow.svg");
+    mask-repeat: no-repeat;
+    content: "";
+  }
+}

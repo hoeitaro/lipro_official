@@ -1,0 +1,33 @@
+@use "../global/mixin" as *;
+
+.p-loader {
+  position: fixed;
+  display: grid;
+  background: var(--gradient-secondary);
+  visibility: visible;
+  opacity: 1;
+  transition:
+    opacity var(--duration) var(--ease-out-base),
+    visibility var(--duration) var(--ease-out-base);
+  inset: 0;
+  place-content: center;
+
+  @include z-index("loader");
+
+  &__logo {
+    width: px-to-rem(70);
+  }
+
+  &.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  @media (scripting: none) {
+    display: none;
+  }
+
+  :where(body:not(.first-access)) &__logo {
+    display: none;
+  }
+}

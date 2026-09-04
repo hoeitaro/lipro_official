@@ -1,0 +1,18 @@
+@use "sass:math";
+
+@mixin clamp-negative(
+  $property,
+  $minSize,
+  $maxSize,
+  $minWidth: 375px,
+  $maxWidth: 768px
+) {
+  $slope: math.div($maxSize - $minSize, $maxWidth - $minWidth) * 100;
+
+  #{$property}: clamp(
+    #{$maxSize},
+    // ← max と min を入れ替え
+    calc(#{$minSize} - (math.div($minWidth, 100) * #{$slope}) + #{$slope}vw),
+    #{$minSize}
+  );
+}

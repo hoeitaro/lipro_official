@@ -1,0 +1,18 @@
+@use "../global/mixin/" as *;
+
+.p-top-company {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  background-image: url("../images/common/bg.png");
+  border-radius: 20px;
+
+  @include clamp(padding-top, 50px, 64px);
+  @include clamp(padding-bottom, 30px, 60px);
+  @include clamp(background-size, 15px, 30px);
+
+  &__list {
+    @include clamp(margin-top, 40px, 80px);
+  }
+}

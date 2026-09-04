@@ -1,0 +1,24 @@
+<div class="circle" data-circle="1" data-circlePosition="1" data-display="3"></div>
+<div class="circle" data-circle="2" data-circlePosition="3" data-display="3"></div>
+<div class="circle" data-circle="3" data-circlePosition="3" data-display="3"></div>
+<% if(directory === "index") { %>
+<div class="circle" data-circle="4" data-circlePosition="1" data-display="3"></div>
+<div class="circle" data-circle="5" data-circlePosition="2" data-display="3"></div>
+<% } else { %>
+<div class="circle" data-circle="4" data-circlePosition="1" data-display="3" data-lower></div>
+<div class="circle" data-circle="5" data-circlePosition="2" data-display="3" data-lower></div>
+<% } %>
+<div class="bg-logo" data-display="6">
+	<picture>
+		<source
+			type="image/webp"
+			srcset="<%- path %>assets/images/common/bg-logo.webp"
+		/>
+		<img
+			src="<%- path %>assets/images/common/bg-logo.png"
+			width="354"
+			height="317"
+			alt=""
+		/>
+	</picture>
+</div>

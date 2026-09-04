@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    /* 言語と環境 */
+    "target": "ES2022", // Node22 & 最新ブラウザに合わせて最新構文対応
+    "lib": ["DOM", "ESNext"], // DOM API と最新 ES 機能を含む
+    "module": "ESNext", // Webpack が処理するので ES モジュール
+    "moduleResolution": "bundler",
+    "esModuleInterop": true, // CommonJS モジュールを import 可能に
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true, // JSON import を許可
+
+    /* 厳格モード */
+    "strict": true, // 全 strict モードオン
+    "skipLibCheck": true, // 型定義ファイルのチェックをスキップ
+
+    /* 出力関連 */
+    "noEmit": false, // Babel で変換するので TS は emit しない
+    "isolatedModules": true // ファイル単位で安全にトランスパイル可能
+  },
+  "include": ["src/**/*"], // ソースディレクトリを指定
+  "exclude": ["node_modules", "dist"] // 除外ディレクトリ
+}

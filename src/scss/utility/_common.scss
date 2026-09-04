@@ -1,0 +1,65 @@
+@use "../global/mixin/" as *;
+
+.circle {
+  position: absolute;
+  top: var(--_circle-position-top);
+  left: var(--_circle-position-left);
+  z-index: var(--_z-index, -1);
+  aspect-ratio: 1;
+  background: var(--_circle-color);
+  border-radius: var(--rounded-full);
+  filter: var(--_blur);
+
+  &[data-circlePosition="1"] {
+    --_blur: blur(2px);
+  }
+
+  &[data-circlePosition="2"] {
+    --_blur: blur(2px);
+  }
+
+  &[data-circlePosition="3"] {
+    --_blur: blur(3px);
+  }
+}
+
+.u-none {
+  display: none;
+}
+
+.u-sm-none {
+  @include mq(sm) {
+    display: none;
+  }
+}
+
+.u-md-none {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.u-lg-none {
+  @include mq(lg) {
+    display: none;
+  }
+}
+
+.u-lg-inline {
+  @include mq(lg) {
+    display: inline;
+  }
+}
+
+.u-text {
+  @include clamp(font-size, 14px, 16px);
+}
+
+.u-weight-bold {
+  font-weight: var(--font-bold);
+}
+
+.u-text-center {
+  text-align: center;
+  text-wrap: balance;
+}

@@ -1,0 +1,51 @@
+@use "../global/mixin/" as *;
+
+.c-heading {
+  display: grid;
+  font-weight: var(--font-medium);
+
+  @include clamp(row-gap, 30px, 50px);
+
+  .heading {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: start;
+    align-items: center;
+    order: 2;
+    color: #7b7b7b;
+    margin-block: var(--half-leading);
+
+    @include clamp(font-size, 15px, 20px);
+
+    span {
+      order: 3;
+
+      @include clamp(margin-left, 10px, 20px);
+    }
+
+    &::before {
+      order: 1;
+      background-color: #fff;
+      border: var(--border-width, 1px) solid var(--color-accent);
+      border-radius: var(--rounded-full);
+      aspect-ratio: 1;
+      content: "";
+
+      @include clamp(width, 10px, 15px);
+    }
+
+    @include mq(md) {
+      --border-width: 2px;
+    }
+  }
+
+  [lang="en"] {
+    order: 1;
+    font-weight: var(--font-medium);
+    font-size: var(--_heading-en-size);
+    font-family: var(--font-family-en);
+    margin-block: var(--half-leading);
+
+    @include clamp(--_heading-en-size, 60px, 120px);
+  }
+}

@@ -1,0 +1,25 @@
+@use "../global/mixin/" as *;
+
+.p-privacy {
+  &__heading {
+    [lang="en"] {
+      @include clamp(--_heading-en-size, 47px, 100px, 768px, 1024px);
+
+      @include mq-down(xs) {
+        --_heading-en-size: #{px-to-rem(41)};
+      }
+    }
+  }
+
+  &__container {
+    @include clamp(margin-top, 30px, 50px);
+  }
+
+  .c-lower-table__label {
+    align-items: start;
+
+    &::before {
+      margin-top: 8.5px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use "../global/mixin/" as *;
+
+.l-contents {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100svh;
+  overflow: clip;
+
+  &.is-scrollLock {
+    overflow: auto;
+    scrollbar-gutter: stable;
+  }
+
+  @include mq(lg) {
+    --_background-size: 128px 123px;
+  }
+}
