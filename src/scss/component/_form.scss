@@ -26,7 +26,8 @@
 }
 
 .radio {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
   font-size: px-to-rem(16);
   column-gap: px-to-rem(10);
