@@ -29,7 +29,7 @@ export default {
   entry: entriesJs,
   output: {
     filename: "js/[name].[hash].js",
-    path: path.resolve(__dirname, "dist/assets"),
+    path: path.resolve(__dirname, "public/assets"),
     chunkFilename: "js/[name].[hash].js",
     publicPath: "/assets/",
     clean: true,
@@ -94,19 +94,19 @@ export default {
       patterns: [
         {
           from: path.resolve(__dirname, "src/images/"),
-          to: path.resolve(__dirname, "dist/assets/images"),
+          to: path.resolve(__dirname, "public/assets/images"),
         },
         {
           from: path.resolve(__dirname, "src/manifest.webmanifest/"),
-          to: path.resolve(__dirname, "dist/assets/manifest.webmanifest"),
+          to: path.resolve(__dirname, "public/assets/manifest.webmanifest"),
         },
         {
           from: path.resolve(__dirname, "src/images/favicons/favicon.ico/"),
-          to: path.resolve(__dirname, "dist/favicon.ico"),
+          to: path.resolve(__dirname, "public/favicon.ico"),
         },
         {
           from: path.resolve(__dirname, "src/images/favicons/icon.svg/"),
-          to: path.resolve(__dirname, "dist/icon.svg"),
+          to: path.resolve(__dirname, "public/icon.svg"),
         },
       ],
     }),
